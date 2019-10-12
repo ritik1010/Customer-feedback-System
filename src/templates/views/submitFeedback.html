@@ -1,0 +1,37 @@
+<!DOCTYPE html><html>
+    <body>
+        <h>
+            Feedback 
+        </h>
+        area<input type="text" id="area"><br>
+        rating <input type="text"  id="rating"><br>
+        discription<input type="text" id="discription"><br>
+        scheme<input type="text" id="scheme"><br>
+        <button onclick="go()">submit</button>
+        <script type="text/javascript">
+                function go(){
+                    const area= document.getElementById('area').value;
+                    const rating=document.getElementById('rating').value;
+                    const discription=document.getElementById('discription').value;
+                    const scheme=document.getElementById('scheme').value;
+                    var xhttp=new XMLHttpRequest();
+                    xhttp.open("POST","http://localhost:3000/feedbacks");
+                    xhttp.setRequestHeader('Content-type',"application/json");
+                    xhttp.send(JSON.stringify({"area":area,"rating":rating,"discription":discription,
+                    "scheme":scheme,"age":9}));
+                    xhttp.onreadystatechange=(e)=>{
+                        const token=sessionStorage.getItem('token')
+                        console.log(token)
+                        // console.log(xhttp.responseText);
+                        // alert("thanks for submitting");
+                        window.location.href="http://localhost:3000/home/"+token;
+                    }
+                }
+               
+        
+            </script>
+
+    </body>
+
+    
+</html>

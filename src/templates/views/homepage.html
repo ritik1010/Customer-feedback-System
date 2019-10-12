@@ -1,0 +1,29 @@
+<!DOCTYPE html><html>
+    <h1>
+        Welcome
+    </h1><br>
+
+    scheme<input type="text" id="scheme">
+    <button onclick="submit()">Submit Feedback</button><br>
+    <button onclick="viewFeedbacks()"> View Feedbacks</button>
+    <script>
+        const schemeName=document.getElementById('scheme').value;
+        const data=localStorage.getItem('credentials')
+        function submit(){
+            const xhttp=new XMLHttpRequest();
+            xhttp.open('GET',"http://localhost:3000/submitFeedback/"+schemeName,true)
+            xhttp.setRequestHeader("Authentication","Bearer "+sessionStorage.getItem(token))
+            xhttp.send()
+            xhttp.onreadystatechange=(e)=>{
+                
+            }
+                
+
+        }
+        function viewFeedbacks(){
+            window.location.href="http://localhost:3000/viewFeedbacks";
+        }
+
+        
+    </script>
+</html>

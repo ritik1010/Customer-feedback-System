@@ -1,0 +1,90 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+<div id="form"><!-- this is just making a kind of imaginary box which can be later customized-->
+    <fieldset id="form"><!--creates a box-->
+        <legend>Registration Form</legend>
+        <br/>
+        
+        <form method="post"  onsubmit="register()">
+        <p>
+        <input type="text" name="firstname" placeholder="Enter First Name" id="fname" />
+        <input type="text" name="lastname" placeholder="Enter Last Name" id="lname" />
+        
+        </p>
+        <p>
+        <input type="email" name="email" placeholder="Enter Your Email Address" id="email" />
+        
+        </p>
+        <p>
+        <input type="text" name="user" placeholder="Create Username" id="uname" />
+        
+        </p>
+        <p>
+        <input type="password" name="newpass" placeholder="Create Password" id="pass" />
+        <input type="password" name="repass" placeholder="Reenter Password" id="repass" />
+        
+        </p>
+        <p>
+        
+        <input type="text"  name="age" placeholder="Age" id="age"/>
+        </p>
+        <p>
+        
+        <input type="radio"  name="gender" value="Male" id="gender"/>Male
+        <input type="radio"  name="gender" value="Female" id="gender"/>Female
+        
+        </p>
+        <p>
+        
+        <input type="text"  name="phn" placeholder="Enter Phone Number" id="phn"/>
+        
+        </p>
+        <p>
+        
+        <input type="submit"  name="submit" value="Submit"/>
+        <button name="butt1" value="butt1" id="but1" onclick="register()">Click here</button>
+        <script type="text/javascript">
+        
+        function register(){
+            const name= document.getElementById('fname').value+" "+document.getElementById('lname').value;
+            const email=document.getElementById('email').value;
+            const gender='male';
+            const password=document.getElementById('pass').value
+            const age=document.getElementById('age').value;
+            var xhttp= new XMLHttpRequest();
+            xhttp.open("POST","http://localhost:3000/users");
+            xhttp.setRequestHeader('Content-type',"application/json")
+            xhttp.send(JSON.stringify({
+    "name": name,
+    "email": email,
+    "age": age,
+    "password": password,
+    "gender":gender
+}));
+        
+            xhttp.onreadystatechange=(e)=>{
+                if(xhttp.responseText=='created')
+                
+                {alert("account has been created");
+                    window.location('http://localhost:3000');}
+                else{
+                    alert("account not created")
+
+                }
+            }
+        }
+        </script>
+        
+        </p>
+        
+        </form>
+        </fieldset>
+        </div>
+        <body>
+        </body>
+        </html> 
+        
