@@ -2,7 +2,7 @@ const feedbacks =require('../models/feedbacks')
 const express=require('express')
 const router=new express.Router()
 const auth=require('../middleware/auth')
-router.post('/feedbacks',auth,async (req,res)=>{
+router.post('/feedbacks',async (req,res)=>{
     const match={}
     
     const feedback=new feedbacks({
@@ -19,18 +19,19 @@ router.post('/feedbacks',auth,async (req,res)=>{
     }
     return res.status(201).send(req.body.name)
 })
-router.get('/feedbacks/:scheme',async(req,res)=>{
-    console.log("get feeedback")
+router.get('/feedbacks/:schemeName',async(req,res)=>{
+    console.log(req.params.schemeName)
     try{
-        const feedback=await feedbacks.find({SchemeName:req.body.SchemeName})
-        res.send(feedback)
-        if(!feedback){
-            return res.send(404).send()
-        }
+        const feedback=await feedbacks.find({schemeName:req.params.schemeName})
+
         
+        if(!feedback){
+            return res.send(404).send('No feedbacks Found')
+        }
+        res.send(feedback)
     }
     catch(e){
-        res.status(500).send()
+        res.status(500).send(e)
     }
 
 })
