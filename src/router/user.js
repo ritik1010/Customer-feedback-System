@@ -17,7 +17,7 @@ router.post('/users',async(req,res)=>{
         res.sendStatus(400).send(e)
     } 
 })
-require('../config/passport')
+// require('../config/passport')
 router.post('/users/login',async(req,res)=>{
 
     try{console.log(req.body)
@@ -65,5 +65,5 @@ router.post('/users/checkEmail',async(req,res)=>{
     
 })
 
-router.get('/users',)
+
 module.exports=router

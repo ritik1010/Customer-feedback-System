@@ -1,0 +1,217 @@
+*{padding:0px;
+margin:0px;
+}
+
+body
+{
+	margin:0px;
+	padding:0px;
+	font-family:Arial;
+	font-size:11px;
+	color:#000;
+	background:url(../images/bg.jpg) repeat-x #e4e9ec;
+}
+
+p
+{
+	padding:2px;
+	margin:0px;
+}
+
+#main_container{
+width:1000px;
+height:1100px;
+margin:auto;
+background-color:white;
+}
+.btn4{
+	background-image:url(../images/btn1.png);
+	border:1px solid green;
+	outline:0px;
+	width:100px;
+	height:40px;
+	border-radius:25px;
+	cursor:pointer;
+	box-shadow:2px 2px 2px 0px rgba(0,0,0,0.3);
+	float:left;
+	font-size:20px;
+	font-weight:bold;
+	color:white;
+	text-shadow:1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.btn5{
+	background-image:url(../images/btn1.png);
+	border:1px solid green;
+	outline:0px;
+	width:100px;
+	height:40px;
+	border-radius:25px;
+	cursor:pointer;
+	box-shadow:2px 2px 2px 0px rgba(0,0,0,0.3);
+	float:right;
+	font-size:20px;
+	font-weight:bold;
+	color:white;
+	text-shadow:1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.top_right{
+	width:220px;
+	height:70px;
+	float:right;
+	-background:red;
+	margin-top:50px;
+	margin-right:50px;
+}
+#header{
+width:1000px;
+height:136px;
+background:url(../images/header_bg.jpg);
+clear:both;
+}
+.extra{background-color:red;height:50px;width:1000px;clear:both;}
+nav#MainNav {float:left; width:99.795918367347%; clear:both; border:1px solid #d9d9d9; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius:4px;
+/* */
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff, endColorstr=#f5f5f5);
+/* */
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff, endColorstr=#f5f5f5)";
+/* */
+background-image: linear-gradient(bottom, #f5f5f5 25%, #ffffff 63%);
+background-image: -o-linear-gradient(bottom, #f5f5f5 25%, #ffffff 63%);
+background-image: -moz-linear-gradient(bottom, #f5f5f5 25%, #ffffff 63%);
+background-image: -webkit-linear-gradient(bottom, #f5f5f5 25%, #ffffff 63%);
+background-image: -ms-linear-gradient(bottom, #f5f5f5 25%, #ffffff 63%);
+background-image: -webkit-gradient(
+linear,
+left bottom,
+left top,
+color-stop(0.25, #f5f5f5),
+color-stop(0.63, #ffffff)
+);
+-moz-box-shadow: 0px 1px 1px #dddcde;
+-webkit-box-shadow: 0px 1px 1px #dddcde;
+box-shadow: 0px 1px 1px #dddcde;
+}
+nav#MainNav ul 		{ float:left; width:100%; }
+nav#MainNav ul li 	{ float:left;  width:auto; list-style-type:none; display:inline; border-left:1px solid #fff; border-right:1px solid #d9d9d9; position:relative;}
+nav#MainNav ul li:last-child {  border:none}
+nav#MainNav ul li a	{ float:left;width:100%; font-size:0.875em; /**/ height: 26px; padding: 10px 0; text-align:center; border-top:6px solid transparent;text-shadow: 0px 1px 1px #dddcde;  }
+nav#MainNav ul li a:hover,
+nav#MainNav ul li a.active {
+text-decoration:none;
+}
+nav#MainNav ul li a img {
+vertical-align:middle; margin-right:10px;
+}
+
+nav#MainNav ul li.Agriculture {
+-border-left:none; width:12.439672801636%; background:url(../images/agriculture.png) no-repeat 3px 8px;background-size:25%;-border:1px solid #d9d9d9;position:center;border-radius:5px;
+
+}
+nav#MainNav ul li.Agriculture a span {
+padding-left:35px;
+}
+nav#MainNav ul li.Agriculture a {
+text-decoration:none;font-size:14px;font-weight:bold;
+}
+nav#MainNav ul li.Agriculture a:hover,
+nav#MainNav ul li.Agriculture a.active {
+border-color:#00a651; color:#00a651;
+}
+nav#MainNav ul li.Health {
+width:10.749672801636%; background:url(../images/health.png) no-repeat 3px 8px;background-size:30%;
+-border:1px solid #d9d9d9;border-radius:5px;
+}
+nav#MainNav ul li.Health a {
+text-decoration:none;font-size:14px;font-weight:bold;
+}
+nav#MainNav ul li.Health a span {
+padding-left:30px;
+}
+nav#MainNav ul li.Health a:hover,
+nav#MainNav ul li.Health a.active {
+border-color:#d21f52;
+color:#d21f52;
+}
+nav#MainNav ul li.PrimaryEducation{
+width:12.711656441718%; background:url(../images/../images.png) no-repeat 3px 8px;background-size:23%;
+-border:1px solid #d9d9d9;border-radius:5px;
+}
+nav#MainNav ul li.PrimaryEducation a span {
+padding-left:25px;
+}
+nav#MainNav ul li.PrimaryEducation a {
+text-decoration:none;font-size:14px;font-weight:bold;
+}
+nav#MainNav ul li.PrimaryEducation a:hover,
+nav#MainNav ul li.PrimaryEducation a.active{
+border-color:#1186b1;
+color:#1186b1;
+}
+nav#MainNav ul li.SocialWelfare{
+width:14.462167689162%; background:url(../images/social.png) no-repeat 3px 8px;background-size:20%;
+-border:1px solid #d9d9d9;border-radius:5px;
+}
+nav#MainNav ul li.SocialWelfare a span {
+padding-left:13px;text-decoration:none;font-size:14px;font-weight:bold;
+}
+nav#MainNav ul li.SocialWelfare a {
+text-decoration:none;font-size:14px;font-weight:bold;
+}
+nav#MainNav ul li.SocialWelfare a:hover,
+nav#MainNav ul li.SocialWelfare a.active{
+border-color:#f25018;
+color:#f25018;
+}
+nav#MainNav ul li.Housing{
+width:12.662167689162%; background:url(../images/housing.png) no-repeat 3px 8px;background-size:27%;
+-border:1px solid #d9d9d9;border-radius:5px;
+}
+nav#MainNav ul li.Housing a span {
+padding-left:25px;
+}
+nav#MainNav ul li.Housing a {
+text-decoration:none;font-size:14px;font-weight:bold;
+}
+nav#MainNav ul li.Housing a:hover,
+nav#MainNav ul li.Housing a.active{
+border-color:#d2841f;
+color:#d2841f;
+}
+nav#MainNav ul li.Labour{
+width:18.462167689162%; background:url(../images/labour.png) no-repeat 3px 8px;background-size:20%;
+-border:1px solid #d9d9d9;border-radius:5px;
+}
+nav#MainNav ul li.Labour a span {
+padding-left:45px;
+}
+nav#MainNav ul li.Labour a {
+text-decoration:none;font-size:14px;font-weight:bold;
+}
+nav#MainNav ul li.Labour a:hover,
+nav#MainNav ul li.Labour a.active{
+border-color:#ff0000;
+color:#ff0000;
+}
+nav#MainNav ul li.FinanceAndTax{
+width:16.762167689162%;  background:url(../images/finance.png) no-repeat 3px 8px;
+background-size:27%;
+-border:1px solid #d9d9d9;border-radius:5px;
+}
+nav#MainNav ul li.FinanceAndTax a span {
+padding-left:32px;
+}
+nav#MainNav ul li.FinanceAndTax a {
+text-decoration:none;font-size:14px;font-weight:bold;
+}
+nav#MainNav ul li.FinanceAndTax a {
+border-radius: 0px 4px 0px 0px; -webkit-border-radius: 0px 4px 0px 0px; -moz-border-radius: 0px 4px 0px 0px;
+}
+nav#MainNav ul li.FinanceAndTax a:hover,
+nav#MainNav ul li.FinanceAndTax a.active{
+border-color:#913983;
+color:#913983;
+}
+
+

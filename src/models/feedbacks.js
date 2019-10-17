@@ -1,10 +1,6 @@
 const mongoose =require('mongoose')
 const feedbackSchema=new mongoose.Schema({
-user_id:{
-    type:String,
-    required:true
 
-},
 age:{
     type:Number,
     required:true

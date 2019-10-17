@@ -1,6 +1,8 @@
 const feedbacks =require('../models/scheme')
 const express=require('express')
 const multer=require('multer')
+
+
 const upload=multer({
     limits:{
         fileSize:1000000,
@@ -40,7 +42,7 @@ router.get('/schemeImage/:schemeName',async(req,res)=>{
     if(!scheme||!scheme.image){
         throw new Error("No image Found")
     }
-    res.set('Content-Type','image/jpg')
+    res.set('Content-Type','image/png')
     res.send(scheme.image)
 
     }
@@ -62,6 +64,7 @@ router.post('/scheme',async(req,res)=>{
     
 })
 router.post('/schemeImage/:schemeName',upload.single('image'),async(req,res)=>{
+    //const buffer= await sharp(req.file.buffer).resize({width:250,hieght:250}).png().toBuffer()
     const scheme= await Schemes.findOne({name:req.params.schemeName})
     if(scheme){
         scheme.image=req.file.buffer
@@ -71,6 +74,29 @@ router.post('/schemeImage/:schemeName',upload.single('image'),async(req,res)=>{
     else{
     res.status(404).send("File was not uploaded")}
 
+})
+router.get('/schemesByDept/:deptName', async (req,res)=>{
+    const deptName=req.params.deptName
+    const match={}
+    
+    try{
+        const scheme= await Schemes.find({departmentName:deptName}).limit(parseInt(req.query.perpage)).skip((parseInt(req.query.pageno)-1)*parseInt(req.query.perpage))
+        if(!scheme){
+            console.log("no schme found")
+            throw new Error("No Scheme Found")
+        }
+        res.send(scheme)
+    
+        }
+        catch(e){
+            res.send(e)
+    
+        }
+
+
+})
+router.get('/schemePage/:schemeName',async(req,res)=>{
+    res.send(req.params.schemeName);
 })
 
 

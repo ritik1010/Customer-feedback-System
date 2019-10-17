@@ -7,6 +7,13 @@ const schemeSchema=new mongoose.Schema({
         unique:true,
         trim:true
     },
+    eligibilty:{
+        type:String
+    },
+    short_discription:{
+        type:String,
+        required:true
+    },
     discription:{
         type:String,
         required:true,
@@ -35,8 +42,21 @@ const schemeSchema=new mongoose.Schema({
     area_served:{
         type:String,
         required:true
+    },
+    keywords:{
+        type:String,
+        required:true
     }
     
 })
+schemeSchema.methods.toJSON= function(){
+    const scheme=this
+    const schemeObject=scheme.toObject()
+    delete schemeObject.image
+    delete schemeObject.keywords
+   
+    
+    return schemeObject
+}
 const Schemes=mongoose.model('Schemes',schemeSchema)
 module.exports=Schemes
